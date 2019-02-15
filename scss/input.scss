@@ -1,0 +1,270 @@
+@mixin bold($fSize) {
+  font: {
+    size: $fSize;
+    weight: bold;
+  }
+}
+
+@mixin curves($radius) {
+  border-radius: $radius;
+  color: white;
+}
+
+@mixin justCent {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flexAround {
+  justify-content: space-around;
+  display: flex;
+}
+
+@mixin flexCent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin size($width,$height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin cushion($pad,$marg) {
+  padding: $pad;
+  margin: $marg;
+}
+
+@mixin redBack {
+  background-color: rgba(230,76,102,0.5);
+}
+
+@mixin darkBack {
+  background-color: rgba(230,76,102,0.8);
+}
+
+@font-face {
+  font-family: cloneMachine;
+  src: url(../fonts/cloneMachine.otf);
+  font-weight: bold;
+}
+
+body {
+  background-color: #aeaeae;
+  font-family: cloneMachine;
+  @include cushion(0,0);
+}
+
+.mainDiv {
+  height: 92vh;
+  overflow: hidden;
+}
+
+.headDiv {
+  background-color: #aeaeae;
+  position: -webkit-sticky;
+  position: sticky;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  @include cushion(2vw,0);
+  @include size(auto,10vmin);
+  top: 0vw;
+  border-bottom: 1px solid silver;
+  z-index: 1000;
+  p {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    display: flex;
+  }
+}
+
+.notifications {
+  @include flexCent;
+  @include redBack;
+  @include size(10vmin,10vmin);
+  @include curves(5vw);
+  @include bold(6.5vmin);
+}
+
+.logoDiv {
+  @include flexCent;
+  @include redBack;
+  @include size(50vw,10vmin);
+  @include curves(5vw);
+  @include bold(6.5vw);
+}
+
+a {
+  text-decoration:none;
+  &:hover div {
+    @include darkBack;
+  }
+}
+
+.loginDiv {
+  @include flexCent;
+  @include redBack;
+  @include size(10vmin,10vmin);
+  @include curves(5vw);
+  @include bold(3vw);
+  img {
+    @include size(8vmin,8vmin);
+  }
+}
+
+
+.bodyDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.friendDiv {
+  @include flexAround;
+  flex-direction: row;
+  @include cushion(0,2vw);
+}
+
+.friendBox {
+  @include flexCent;
+  @include size(80vw,10vw);
+  @include redBack;
+  @include curves(2.5vw);
+  @include cushion(0,0 5vw 0 0);
+}
+
+.newMessageBox {
+  @include flexCent;
+  @include redBack;
+  @include size(10vmin,10vmin);
+  @include curves(5vw);
+  @include bold(8vmin);
+  p {
+    @include cushion(0,0);
+  }
+  &:hover {
+    @include darkBack;
+  }
+}
+
+.contentDiv {
+  @include flexAround;
+  flex-flow: wrap row;
+  align-items: flex-start;
+}
+
+.gameDiv {
+  @include flexCent;
+  @include size(7vmin,7vmin);
+  @include redBack;
+  border-radius: 1vw;
+  a {
+    @include flexCent;
+    img {
+      @include size(5vmin,5vmin);
+    }
+  }
+  &:hover {
+    @include darkBack;
+  }
+}
+
+.tabDiv {
+  @include flexAround;
+  flex-direction: row;
+}
+
+.dropdown {
+  display: flex;
+  position: relative;
+  display: inline-block;
+  @include size(30vmin,18vmin);
+  margin-top: 2vh;
+  border-radius: 2vw;
+  @include redBack;
+  &:hover .dropdown-content {
+    display:block;
+  }
+}
+
+.more {
+  @include justCent;
+  align-self: center;
+  h1 {
+    @include flexCent;
+    margin: {
+      block-start: 0;
+      block-end: 0;
+    }
+    font-size: 5vmin;
+  }
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  @include cushion(12px 16px,0);
+  z-index: 1;
+  p:hover {
+    background-color: yellow;
+  }
+}
+
+.newsDiv {
+  @include justCent;
+  @include size(60vw,50vh);
+  @include redBack;
+  color: white;
+  font-size: 3vw;
+  @include cushion(0,2vw 0 2vw 0);
+  border-radius: 2vw;
+  h3 {
+    align-self: center;
+  }
+}
+
+// .linkDiv {
+//   @include flexCent;
+//   @include size(90vw,8vw);
+//   @include cushion(2vw,auto);
+//   @include redBack;
+//   color: white;
+//   font-size: 3vw;
+//   border-radius: 2vw;
+// }
+
+.footDiv {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  @include size(100%,8vh);
+  @include redBack;
+  border-top: 2px solid #bebebe;
+}
+
+@media only screen and (max-width:450px) {
+  .contentDiv {
+    flex-direction: column;
+    align-items: center;
+  }
+  .gameDiv{
+    flex-direction: column;
+    margin-bottom: 1vw;
+  }
+  .newsDiv{
+    margin-bottom: 1vw;
+    width: 90vw;
+  }
+  .dropdown {
+    @include size(50vw,10vw);
+    @include cushion(0,0vw 0 1vw 0);
+    margin-bottom: 1vw;
+    margin-top: 0vw;
+    left: 20vw;
+  }
+}

@@ -1,0 +1,229 @@
+@font-face {
+  font-family: cloneMachine;
+  src: url(../fonts/cloneMachine.otf);
+  font-weight: bold; }
+body {
+  background-color: #aeaeae;
+  font-family: cloneMachine;
+  padding: 0;
+  margin: 0; }
+
+.mainDiv {
+  height: 92vh;
+  overflow: hidden; }
+
+.headDiv {
+  background-color: #aeaeae;
+  position: -webkit-sticky;
+  position: sticky;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2vw;
+  margin: 0;
+  width: auto;
+  height: 10vmin;
+  top: 0vw;
+  border-bottom: 1px solid silver;
+  z-index: 1000; }
+  .headDiv p {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    display: flex; }
+
+.notifications {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(230, 76, 102, 0.5);
+  width: 10vmin;
+  height: 10vmin;
+  border-radius: 5vw;
+  color: white;
+  font-size: 6.5vmin;
+  font-weight: bold; }
+
+.logoDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(230, 76, 102, 0.5);
+  width: 50vw;
+  height: 10vmin;
+  border-radius: 5vw;
+  color: white;
+  font-size: 6.5vw;
+  font-weight: bold; }
+
+a {
+  text-decoration: none; }
+  a:hover div {
+    background-color: rgba(230, 76, 102, 0.8); }
+
+.loginDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(230, 76, 102, 0.5);
+  width: 10vmin;
+  height: 10vmin;
+  border-radius: 5vw;
+  color: white;
+  font-size: 3vw;
+  font-weight: bold; }
+  .loginDiv img {
+    width: 8vmin;
+    height: 8vmin; }
+
+.bodyDiv {
+  display: flex;
+  flex-direction: column; }
+
+.friendDiv {
+  justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  margin: 2vw; }
+
+.friendBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  height: 10vw;
+  background-color: rgba(230, 76, 102, 0.5);
+  border-radius: 2.5vw;
+  color: white;
+  padding: 0;
+  margin: 0 5vw 0 0; }
+
+.newMessageBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(230, 76, 102, 0.5);
+  width: 10vmin;
+  height: 10vmin;
+  border-radius: 5vw;
+  color: white;
+  font-size: 8vmin;
+  font-weight: bold; }
+  .newMessageBox p {
+    padding: 0;
+    margin: 0; }
+  .newMessageBox:hover {
+    background-color: rgba(230, 76, 102, 0.8); }
+
+.contentDiv {
+  justify-content: space-around;
+  display: flex;
+  flex-flow: wrap row;
+  align-items: flex-start; }
+
+.gameDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7vmin;
+  height: 7vmin;
+  background-color: rgba(230, 76, 102, 0.5);
+  border-radius: 1vw; }
+  .gameDiv a {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .gameDiv a img {
+      width: 5vmin;
+      height: 5vmin; }
+  .gameDiv:hover {
+    background-color: rgba(230, 76, 102, 0.8); }
+
+.tabDiv {
+  justify-content: space-around;
+  display: flex;
+  flex-direction: row; }
+
+.dropdown {
+  display: flex;
+  position: relative;
+  display: inline-block;
+  width: 30vmin;
+  height: 18vmin;
+  margin-top: 2vh;
+  border-radius: 2vw;
+  background-color: rgba(230, 76, 102, 0.5); }
+  .dropdown:hover .dropdown-content {
+    display: block; }
+
+.more {
+  display: flex;
+  justify-content: center;
+  align-self: center; }
+  .more h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-size: 5vmin; }
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  margin: 0;
+  z-index: 1; }
+  .dropdown-content p:hover {
+    background-color: yellow; }
+
+.newsDiv {
+  display: flex;
+  justify-content: center;
+  width: 60vw;
+  height: 50vh;
+  background-color: rgba(230, 76, 102, 0.5);
+  color: white;
+  font-size: 3vw;
+  padding: 0;
+  margin: 2vw 0 2vw 0;
+  border-radius: 2vw; }
+  .newsDiv h3 {
+    align-self: center; }
+
+.footDiv {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 8vh;
+  background-color: rgba(230, 76, 102, 0.5);
+  border-top: 2px solid #bebebe; }
+
+@media only screen and (max-width: 450px) {
+  .contentDiv {
+    flex-direction: column;
+    align-items: center; }
+
+  .gameDiv {
+    flex-direction: column;
+    margin-bottom: 1vw; }
+
+  .newsDiv {
+    margin-bottom: 1vw;
+    width: 90vw; }
+
+  .dropdown {
+    width: 50vw;
+    height: 10vw;
+    padding: 0;
+    margin: 0vw 0 1vw 0;
+    margin-bottom: 1vw;
+    margin-top: 0vw;
+    left: 20vw; } }
+
+/*# sourceMappingURL=output.css.map */

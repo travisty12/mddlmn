@@ -10,3 +10,7 @@ function dispSite(siteName) {
     document.getElementById(siteName).style.display = "none";
   }
 }
+
+$(document).ready(function() {
+  
+});
